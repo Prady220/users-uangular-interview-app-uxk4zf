@@ -10,22 +10,18 @@
     placeholder="Filter users..."
   />
 </div>
-<br />
 
 <ngb-accordion #accImpl="ngbAccordion" *ngFor="let user of filteredUsers">
-      <ngb-panel title="user.name">
-        <ng-template ngbPanelContent>
-          <br />
-          Street: {{user.address.street}}
-          <br />
-          Suite: {{user.address.suite}}
-          <br />
-          City: {{user.address.city}}
-          <br />
-          ZipCode: {{user.address.zipcode}}
-          <br />
-          <br />
-        </ng-template>
-      </ngb-panel>
-  <br />
+  <ngb-panel title="{{user.name}}">
+    <ng-template ngbPanelContent>
+      Street: {{user.address.street}}
+      <br />
+      Suite: {{user.address.suite}}
+      <br />
+      City: {{user.address.city}}
+      <br />
+      ZipCode: {{user.address.zipcode}}
+      <br />
+    </ng-template>
+  </ngb-panel>
 </ngb-accordion>

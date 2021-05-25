@@ -1,0 +1,31 @@
+<h1>NgUsers</h1>
+<div class="form-group">
+  <input
+    id="searchName"
+    class="form-control"
+    name="searchName"
+    [ngModel]="searchName"
+    (ngModelChange)="filterUsers($event)"
+    type="text"
+    placeholder="Filter users..."
+  />
+</div>
+<br />
+
+<ngb-accordion #accImpl="ngbAccordion" *ngFor="let user of filteredUsers">
+      <ngb-panel title="user.name">
+        <ng-template ngbPanelContent>
+          <br />
+          Street: {{user.address.street}}
+          <br />
+          Suite: {{user.address.suite}}
+          <br />
+          City: {{user.address.city}}
+          <br />
+          ZipCode: {{user.address.zipcode}}
+          <br />
+          <br />
+        </ng-template>
+      </ngb-panel>
+  <br />
+</ngb-accordion>
